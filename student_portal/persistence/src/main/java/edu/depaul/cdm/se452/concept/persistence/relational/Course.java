@@ -19,7 +19,7 @@ import lombok.ToString;
  */
 @Data
 @Entity
-@Table(name="foo")
+@Table(name="Course")
 public class Course {
     @Id
     @GeneratedValue
