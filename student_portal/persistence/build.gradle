@@ -4,9 +4,9 @@ plugins {
 	id 'java'
 }
 
-// group = 'edu.depaul.cdm.se452.concept'
-// version = '0.0.1-SNAPSHOT'
-// sourceCompatibility = '11'
+group = 'edu.depaul.cdm.se452.concept'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
 
 configurations {
 	compileOnly {

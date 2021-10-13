@@ -11,6 +11,6 @@ Setup of Docker Compose database to support demo, whether project or for concept
 ### Docker commands
 <li>start: docker-compose up -d
 <li>stop: docker-compose down
-<br/><i><b>Need to create database first time</b></i><li>docker exec -it demo-postgres psql -Upostgres<li>create database se452db;</li>
+<br/><i><b>Need to create database first time</b></i><li>docker exec -it project-postgres psql -Upostgres<li>create database se452db;</li>
 
  

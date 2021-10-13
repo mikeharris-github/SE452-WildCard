@@ -15,7 +15,7 @@ configurations {
 }
 
 springBoot {
-    mainClassName = 'src.main.java.persistence.relational.Main'
+    mainClassName = 'edu.depaul.cdm.se452.concept.Main'
 }
 repositories {
 	mavenCentral()
