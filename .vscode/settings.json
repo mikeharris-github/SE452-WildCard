@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "student_portal/src",
+        "student_portal/base/src/main/java"
+    ]
+}
