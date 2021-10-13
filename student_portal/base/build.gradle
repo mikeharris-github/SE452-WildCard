@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'edu.depaul.cdm.se452.concept'
+//group = 'edu.depaul.cdm.se452.concept'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -15,7 +15,7 @@ configurations {
 }
 
 springBoot {
-    mainClassName = 'edu.depaul.cdm.se452.concept.Main'
+    mainClassName = 'student_portal.Main'
 }
 repositories {
 	mavenCentral()

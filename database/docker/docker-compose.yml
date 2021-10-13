@@ -6,7 +6,7 @@ version: '3.7'
 services:
     sql:
         container_name: project-postgres
-        image: se452db
+        image: postgres
         volumes: 
             - "~/postgres/data:/var/lib/postgresql/data"
         restart: always
