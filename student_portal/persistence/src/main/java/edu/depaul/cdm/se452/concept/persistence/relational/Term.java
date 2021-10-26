@@ -19,14 +19,15 @@ import lombok.ToString;
  */
 @Data
 @Entity
-@Table(name="Course")
-public class Course {
+@Table(name="Term")
+public class Term {
     @Id
     @GeneratedValue
-    private long id;
-    
-    private String dept;    
-    private int num;
 
+    private long id;
+
+    private String term_name;
+    private char course_dept;
+    private int course_num;
 
 }

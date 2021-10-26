@@ -33,21 +33,23 @@ CREATE TABLE records (
     name VARCHAR(50),
     dept char(3),
     num int,
-    term VARCHAR(10),
+    term VARCHAR(30),
     grade char(1),
     units int,
-    courseStatus char(1)
+    courseStatus VARCHAR(20)
 );
 
 CREATE TABLE department (  
   id serial  PRIMARY KEY,
-  department_name VARCHAR(25)
+  department_name VARCHAR(3),
+  campus VARCHAR(20)
 );
 
 CREATE TABLE term (
     id serial  PRIMARY KEY,
-    term_name VARCHAR(10),
-    year int    
+    term_name VARCHAR(30),
+    course_dept VARCHAR(3),
+    course_num int
 );
 
 CREATE TABLE student_auth (
