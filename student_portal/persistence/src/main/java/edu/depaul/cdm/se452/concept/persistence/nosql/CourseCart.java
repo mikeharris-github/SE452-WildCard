@@ -16,9 +16,10 @@ import lombok.NoArgsConstructor;
 public class CourseCart {
     @Id
 	private String course;
-	private String course_name;
 	private String status;
 	private Date startdate;
 	private Date enddate;
-
+	
+	//NEED FUNTION TO MODIFY THIS NUMBER
+	private int availableSeats = 25;
 }

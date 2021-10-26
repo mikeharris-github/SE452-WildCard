@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.concept.persistence.nosql;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -18,26 +19,27 @@ public class Main {
   private static final Logger log = LoggerFactory.getLogger(Main.class);
 
   @Bean
-  public CommandLineRunner saveCourseReview(CourseReviewRepository repository) {
+  public CommandLineRunner saveCourseCart(CourseCartRepository repository) {
     return (args) -> {
-      CourseReview review1 = new CourseReview();
-      review1.setCourse("SE452a");
-      review1.setReview("Hard");
-      repository.save(review1);
+      CourseCart course1 = new CourseCart();
+      course1.setCourse("SE 400");
+      course1.setStatus("Enrolled");
+      course1.setStartdate(Date.valueOf("09/01/2021"));
+      course1.setEnddate(Date.valueOf("12/01/2021"));;
+      repository.save(course1);
 
-      CourseReview review2 = new CourseReview();
-      review2.setCourse("SE352");
-      review2.setReview("More Fun");
-      repository.save(review2);      
+      CourseCart course2 = new CourseCart();
+      course2.setCourse("CSC 400");
+      repository.save(course2);  
     };
   }
 
   @Bean
-  public CommandLineRunner showCourseReview(CourseReviewRepository repository) {
+  public CommandLineRunner showCourseReview(CourseCartRepository repository) {
     return (args) -> {
-      List<CourseReview> reviews = repository.findAll();
-      for (CourseReview review : reviews) {
-        log.info(review.toString());
+      List<CourseCart> courses = repository.findAll();
+      for (CourseCart course : courses) {
+        log.info(course.toString());
       }
     };
   }

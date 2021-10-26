@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "reviews")
+@Document(collection = "CourseCatalog")
 public class CourseCatalog {
     @Id
 	private String courseName;
