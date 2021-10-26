@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "reviews")
+@Document(collection = "CourseCart")
 public class CourseCart {
     @Id
 	private String course;
+	private String course_name;
 	private String status;
 	private Date startdate;
 	private Date enddate;
-
 
 }

@@ -14,20 +14,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Student")
-public class Student {
+@Table(name = "StudentAuth")
+public class StudentAuth {
 	@Id
 	@GeneratedValue
 	private long id;
 	
-	@Column(name = "stu_id")
-	private String studentId;
-
-	@Column(name = "nm")
-	private String name;
-
-	@Email(message = "not valid email address format")
-	private String email;
-
-	private Date admittedDate;
+	private	String username;
+	private String password;
+	private int student_id;
+	private String first_name;
+	private String last_name;
 }

@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.concept.persistence.relational;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,16 +20,17 @@ import lombok.ToString;
  */
 @Data
 @Entity
-@Table(name="Term")
-public class Term {
+@Table(name="StudentCourseHistory")
+public class StudentCourseHistory {
     @Id
     @GeneratedValue
-
     private long id;
+    
+    private int student_id;
+    private String course;
+    private String status;
+    private Date start_date;
+    private Date end_date;
 
-    private String term_name;
-    private char course_dept;
-    private int course_num;
-    private String student_name;
 
 }

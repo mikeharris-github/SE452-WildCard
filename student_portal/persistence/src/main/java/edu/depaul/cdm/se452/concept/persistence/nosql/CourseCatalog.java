@@ -21,6 +21,5 @@ public class CourseCatalog {
 	private Date startDate;
 	private Date endDate;
 	private int availableSeats;
-	private Date admitted_date;
 
 }

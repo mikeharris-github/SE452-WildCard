@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS students_classes;
+
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS course;
 DROP TABLE IF EXISTS records;
@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS term;
 DROP TABLE IF EXISTS student_auth;
 DROP TABLE IF EXISTS instructor;
+DROP TABLE IF EXISTS student_course_history;
 
 
 DROP SEQUENCE IF EXISTS hibernate_sequence;
@@ -49,24 +50,33 @@ CREATE TABLE term (
     id serial  PRIMARY KEY,
     term_name VARCHAR(30),
     course_dept VARCHAR(3),
-    course_num int
+    course_num int,
+    student_name VARCHAR (50)
 );
 
 CREATE TABLE student_auth (
      id serial  PRIMARY KEY,
-    student_id VARCHAR(10),
-    password VARCHAR(50)     
+    username VARCHAR(10),
+	password	VARCHAR(20),
+	student_id	int,
+	first_name	VARCHAR(20),
+	last_name	VARCHAR(20)
 );
 
 CREATE TABLE instructor (
      id serial  PRIMARY KEY,
-    first_name VARCHAR(20),
-    last_name VARCHAR(20) 
+    instructor_id int,
+    instructor_name VARCHAR(50),
+    course  VARCHAR(7),
+    email VARCHAR(50),
+    office VARCHAR(10),
+    start_date date,
+    end_date date
 );
 
-CREATE TABLE students_classes (
+CREATE TABLE student_course_history (
      id serial  PRIMARY KEY,
-    student_name VARCHAR(25),
+    student_id int,
     status char(1),
     course VARCHAR(20),
     start_date date,
