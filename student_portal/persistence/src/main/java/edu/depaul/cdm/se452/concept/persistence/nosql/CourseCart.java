@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class CourseCart {
     @Id
 	private String course;
-	private String status;
+	private String description;
 	private Date startdate;
 	private Date enddate;
 	
