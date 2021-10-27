@@ -17,9 +17,9 @@ public class Main {
     @Bean
     public CommandLineRunner showMessage() {
       return (args) -> {
-        System.out.println("begin encoded");
+        //System.out.println("begin encoded");
         System.out.println(greeting);
-              System.out.println("end encoded");
+         //     System.out.println("end encoded");
       };
     }    
     public static void main(String[] args) {
