@@ -23,7 +23,7 @@ public class Main {
     return (args) -> {
       CourseCart course1 = new CourseCart();
       course1.setCourse("SE 400");
-      course1.setStatus("Enrolled");
+      course1.setDescription("This class will teach you about setting up a web app ;)");
       course1.setStartdate(Date.valueOf("09/01/2021"));
       course1.setEnddate(Date.valueOf("12/01/2021"));;
       repository.save(course1);
