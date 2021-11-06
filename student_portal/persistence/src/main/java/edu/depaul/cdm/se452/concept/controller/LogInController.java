@@ -14,7 +14,7 @@ public class LogInController {
     public ModelAndView showGreeting() {
         //uses the name of the HTML file for MV
         ModelAndView mv = new ModelAndView("login");
-        mv.addObject("name" , "Hello SE352/452 from Group 7 " + login);
+        mv.addObject("name" , "Welcome to the Student Portal for SE452 group 7. Please log in below " + login);
         return mv;
     }
 
