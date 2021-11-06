@@ -10,7 +10,7 @@ public class LogInController {
     @Value( "${spring.profiles.active}" )
     private String login;
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public ModelAndView showGreeting() {
         //uses the name of the HTML file for MV
         ModelAndView mv = new ModelAndView("login");
