@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+         <?php
+         // define variables and set to empty values
+         $usernameErr = $passwordErr = "";
+         $username = $password = "";
+         
+         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (empty($_POST["username"])) {
+          $nameErr = "username is required";
+         } else {
+          $username = test_input($_POST["name"]);
+         }
+         
+         if (empty($_POST["password"])) {
+          $passwordErr = "password is required";
+         } else {
+           $password = test_input($_POST["password"]);
+         }
+         
+         
+         function test_input($data) {
+         return $data;
+         }
+         ?>
+         
+  <!DOCTYPE html>
     <head>
          <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,12 +49,31 @@
         </style>
     </head>
     <body>
-        <form>
+      <form method="get" action="" name="login-form"><form>
           <h1> Student Portal Login </h1>
           <p> <label>Username: </label> <input type="text" name="username"/> </p>
+          <span class="error">* <?php echo $usernameErr;?></span>
           <p> <label> Password:  </label> <input type="password" name="password"/> </p>
+          <span class="error">* <?php echo $passwordErr;?></span>
           <label>  <input type="submit" value="Sign In"/> </label>
          </form>
-            
+         
+         
+         <?php
+            $db = pg_connect('host=localhost dbname=se452db user=postgres password=password');
+         
+             $username = pg_escape_string($_POST['username']);
+             $password = pg_escape_string($_POST['password']);
+         
+             $query = "SELECT * from student_auth where username = $username and password = $password";
+             $result = pg_query($db, $query);
+             if (!$result) {
+                 $errormessage = pg_last_error();
+                 echo "Error with Login: " . $errormessage;
+                 exit();
+             }
+             printf ("You are now logged in");
+             pg_close();
+             ?>
     </body>
 </html>
