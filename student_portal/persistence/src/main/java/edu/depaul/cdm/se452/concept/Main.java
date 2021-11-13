@@ -5,15 +5,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Sample to demonstrate profile (application-dev vs application-prod)
- */
+ */    
+@ComponentScan({"edu.depaul.cdm.se452.concept.model", "edu.depaul.cdm.se452.concept.controlle‌​r"})
 @SpringBootApplication
 public class Main {
     @Value( "${app.greeting}" )
     private String greeting;
   
+
+
+
     @Bean
     public CommandLineRunner showMessage() {
       return (args) -> {
