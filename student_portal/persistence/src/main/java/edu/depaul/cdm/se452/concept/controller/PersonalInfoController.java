@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PersonalInfoController {
     @GetMapping("/personalinfo")
-    public ModelAndView showGreeting() {
+    public ModelAndView showPersonalInfo() {
         ModelAndView mv = new ModelAndView("MyPersonalInfo");
         return mv;
     } 
