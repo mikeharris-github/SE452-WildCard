@@ -6,13 +6,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SecurityController {
-    @GetMapping("/")
-    public String homepage(){
-        return "studentportal_homepage";
-    }
-
     @GetMapping("/login")
     public String login() {
         return "login";
-    }    
+    }
 }

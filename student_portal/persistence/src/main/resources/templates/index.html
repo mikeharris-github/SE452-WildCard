@@ -1,15 +1,24 @@
-<!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="/fragments/header :: common-header">Index 
+<!DOCTYPE html>
+    <head>
+        <title>Student Homepage</title>
+        <style>
+          html,body{ height:100%; width:100%; margin:0;}
+            body  { display:flex;}
+            form  { margin: auto; 
+                    border-spacing: 10px;}
+            .btn-group button {
+                    padding: 10px 24px; 
+                    width: 50%;
+                  }
+        </style>
+        
     </head>
     <body>
-        <div layout:fragment="content" th:remove="tag">
-            <h1>DePaul SE352/452 Demo</h1>
-            <p>This is an unsecured page, but you can access the secured pages after authenticating.</p>
-            <ol>
-                <li><a href="/student_portal/" th:href="@{/student_portal}">Secured Project Demo</a></li>
-            </ol>       
-        </div>
-        <div th:replace="/fragments/footer :: footer"></div>   
+        <form>
+          <h1> <center>Student Portal Homepage </h1>
+          <div class="btn-group"> <center>
+            <a href="/login">Log In</a>
+          </div>
+        </form>  
     </body>
 </html>
