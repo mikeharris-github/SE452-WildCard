@@ -9,7 +9,7 @@ public class DropCourse1Controller {
     @GetMapping("/dropclass1")
     public ModelAndView showGreeting() {
         ModelAndView mv = new ModelAndView("DropClass1");
-        mv.addObject("name", "Hello SE352/452 from test");
+        // mv.addObject("name", "Hello SE352/452 from test");
         return mv;
     } 
 }

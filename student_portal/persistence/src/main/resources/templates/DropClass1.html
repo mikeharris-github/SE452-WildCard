@@ -2,7 +2,8 @@
 <html>
 <body>
   <nav class>
-      <a href="#home">Home</a>
+      <!-- <a href="#home">Home</a> -->
+      <a href="/login" th:href="@{/login}">Login</a>
       <a href="#MyPersonalInfo">My personal information</a>
       <a href="#CourseCart">Course cart</a>
       <a href="#ClassSearchandEnroll">Class search and enroll</a>
@@ -23,7 +24,10 @@
 
 </form>
 
-<p>  <input type="Submit" value="Drop Selected Classes"></p>
+  <!-- <p>  <input type="Submit" value="Drop Selected Classes"></p> -->
+  <a href="/dropclass2" th:href="@{/dropclass2}" class="btn btn-large btn-success">Drop Selected Classes</a>
+
+
 
 </body>
 </html>
