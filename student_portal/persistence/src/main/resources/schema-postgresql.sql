@@ -4,7 +4,9 @@ DROP TABLE IF EXISTS course;
 DROP TABLE IF EXISTS records;
 DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS term;
-DROP TABLE IF EXISTS student_auth;
+DROP TABLE IF EXISTS authority;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users_authority;
 DROP TABLE IF EXISTS instructor;
 DROP TABLE IF EXISTS student_course_history;
 
@@ -54,13 +56,21 @@ CREATE TABLE term (
     student_name VARCHAR (50)
 );
 
-CREATE TABLE student_auth (
-     id serial  PRIMARY KEY,
-    username VARCHAR(10),
-	password	VARCHAR(20),
-	student_id	int,
-	first_name	VARCHAR(20),
-	last_name	VARCHAR(20)
+create table authority (
+    id serial primary key,
+    name varchar(15)
+);
+
+create table users (
+    id serial primary key,
+    username varchar(15),
+    password varchar(80),
+    date_created timestamp default current_timestamp
+);
+
+create table users_authority (
+    authority_id int,
+    user_id int
 );
 
 CREATE TABLE instructor (
