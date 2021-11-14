@@ -7,8 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AcademicRecordsController {
     @GetMapping("/academicrecords")
-    public ModelAndView showGreeting() {
+    public ModelAndView showRecords() {
         ModelAndView mv = new ModelAndView("AcademicRecords");
         return mv;
     } 
+
 }
