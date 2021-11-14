@@ -15,9 +15,6 @@ import org.springframework.context.annotation.Bean;
 public class Main {
     @Value( "${app.greeting}" )
     private String greeting;
-  
-
-
 
     @Bean
     public CommandLineRunner showMessage() {
