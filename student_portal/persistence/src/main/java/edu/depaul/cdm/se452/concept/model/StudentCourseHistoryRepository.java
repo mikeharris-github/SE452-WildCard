@@ -17,4 +17,5 @@ public interface StudentCourseHistoryRepository extends CrudRepository<StudentCo
         value = "SELECT * from student_course_history where student_id = :student_id",
         nativeQuery = true)
     public List<StudentCourseHistory> findByStudentId(@Param("student_id") int student_id);
+    
 }

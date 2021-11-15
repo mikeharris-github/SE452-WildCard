@@ -28,7 +28,7 @@ public class StudentCourseHistory {
     @Id
     // @GeneratedValue(generator = "uuid")
 	// @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private UUID id;
+    //private UUID id;
     
     @Column(name = "studentId")
     private int studentId;
