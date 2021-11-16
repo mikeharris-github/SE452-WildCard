@@ -1,14 +1,14 @@
 
-DROP TABLE IF EXISTS student;
-DROP TABLE IF EXISTS course;
-DROP TABLE IF EXISTS records;
-DROP TABLE IF EXISTS department;
-DROP TABLE IF EXISTS term;
-DROP TABLE IF EXISTS authority;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS users_authority;
-DROP TABLE IF EXISTS instructor;
-DROP TABLE IF EXISTS student_course_history;
+DROP TABLE IF EXISTS student CASCADE;
+DROP TABLE IF EXISTS course CASCADE;
+DROP TABLE IF EXISTS records CASCADE;
+DROP TABLE IF EXISTS department CASCADE;
+DROP TABLE IF EXISTS term CASCADE;
+DROP TABLE IF EXISTS authority CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS users_authority CASCADE;
+DROP TABLE IF EXISTS instructor CASCADE;
+DROP TABLE IF EXISTS student_course_history CASCADE;
 
 
 DROP SEQUENCE IF EXISTS hibernate_sequence;
@@ -39,7 +39,7 @@ CREATE TABLE records (
     term VARCHAR(30),
     grade char(1),
     units int,
-    courseStatus VARCHAR(20)
+    course_status VARCHAR(20)
 );
 
 CREATE TABLE department (  

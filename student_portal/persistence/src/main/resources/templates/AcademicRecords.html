@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+  </head>
 <body>
-    <nav class>
-        <a href="/" th:href="@{/}">Home</a>
-        <a href="/MyPersonalInfo" th:href="@{/mypersonalinfo}">My Personal Information</a>
-        <a href="/CourseCart" th:href="@{/coursecart}">Course Cart</a>
-        <a href="/ClassSearchandEnroll" th:href="@{/classsearchandenroll}">Class search and enroll</a>
-        <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
-  </nav>
+  <nav class>
+    <a href="/" th:href="@{/}">Home</a>
+    <a href="/CourseCart" th:href="@{/coursecart}">Course Cart</a>
+    <a href="/ClassSearchandEnroll" th:href="@{/classsearchandenroll}">Class search and enroll</a>
+    <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
 
-<h2>Academic Records</h2>
+    <a href="#Instructor">Instructor</a>
+</nav>
+ <div class="container">
+    <form method="post" th:object="${recordItems}" class="mt-5">
+        <div class="form-group">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Course</th>
-    <th>Term</th>
-    <th>Grade</th>
-    <th>Units</th>
-    <th>Status</th>
-  </tr>
-  <tr>
-    <td>John Smith</td>
-    <td>SE 400</td>
-    <td>Winter 2020</td>
-    <td>A</td>
-    <td>4.0</td>
-    <td>Taken</td>
-  </tr>
-  <tr>
-    <td>Sean Wilson</td>
-    <td>CSC 400</td>
-    <td>Winter 2020</td>
-    <td>A</td>
-    <td>4.0</td>
-    <td>Taken</td>
-  </tr>
-</table>
+          <table d="Academic Records" class="table">
+            <thead>
+              <tr>
+                <th scope="col"> Name</th>
+                <th scope="col"> Dept </th>
+                <th scope="col"> Num </th>
+                <th scope="col"> Term </th>
+                <th scope="col"> Grade </th>
+                <th scope="col"> Units </th>
+                <th scope="col"> Course Status </th>
+            </tr>
+            </thead>
+            <tr th:each="records : ${recordItems}">
+              <td span th:text="${records.name}"></td>
+              <td span th:text="${records.dept}"></td>
+              <td span th:text="${records.num}"></td>
+              <td span th:text="${records.term}"></td>
+              <td span th:text="${records.grade}"></td>
+              <td span th:text="${records.units}"></td>
+              <td span th:text="${records.course_status}"></td>
+              </tr>
+          </table> 
+        </div>
+    </form>
 
 </body>
 </html>

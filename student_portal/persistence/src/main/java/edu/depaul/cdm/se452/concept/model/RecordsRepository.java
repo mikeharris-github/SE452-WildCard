@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.concept.model;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -7,4 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * @see https://docs.spring.io/spring-data/data-jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html
  */
 public interface RecordsRepository extends CrudRepository<Records, Long>  {
+
 }
