@@ -5,7 +5,7 @@ INSERT INTO users_authority(authority_id, user_id) VALUES (1, 1);
 INSERT INTO users_authority(authority_id, user_id) VALUES (2, 2);
 INSERT INTO users(id,username, password ) VALUES (1,'wildcard', '$2a$04$5rU5L.Cn7wpvYMzmv6KyUOZ4n4ffa2HULGoMZy9sxBCgnPbUHpwzu');
 
-INSERT INTO student (student_id, first_name, last_name, major, faculty_advisor) VALUES ('11101', 'Nicole', 'Emich', 'Computer Science', 'Someone');
+INSERT INTO student (student_id, first_name, last_name, major, faculty_advisor) VALUES ('1234551', 'Nicole', 'Emich', 'Computer Science', 'Someone');
 INSERT INTO student (student_id, first_name, last_name, major, faculty_advisor) VALUES ('2203925', 'John', 'Smith', 'Computer Science', 'Willy Wonka');
 INSERT INTO student (student_id, first_name, last_name, major, faculty_advisor) VALUES ('3312052', 'Chris', 'Johnson', 'Software Engineering', 'Oprah Winfrey');
 INSERT INTO student (student_id, first_name, last_name, major, faculty_advisor) VALUES ('9489211', 'Sarah', 'Ferns', 'Computer Science', 'Candace Parker');
