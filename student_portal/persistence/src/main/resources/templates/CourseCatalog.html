@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="container">
-        <form method="post" th:object="${cartItems}" class="mt-5">
+        <form method="post" action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" th:object="${courses}" class="mt-5">
             <div class="form-group">
                 <label>Select a course</label>
                 <table id="CourseList" class="table">
@@ -25,23 +25,21 @@
                             <th scope="col"> End date </th>
                         </tr>
                     </thead>
-                    <tr th:each="cart : ${cartItems}">
+                    <tr th:each="course : ${courses}">
 
-                        <td span><input type=radio th:name="${cart}" th:text="${cart.courseName}"/></td>
-                        <td span th:text="${cart.department}"></td>
-                        <td span th:text="${cart.courseID}"></td>
-                        <td span th:text="${cart.startDate}"></td>
-                        <td span th:text="${cart.endDate}"></td>
+                        <td span><input type=radio th:name="${courses}" th:text="${course.courseName}"/></td>
+                        <td span th:text="${course.department}"></td>
+                        <td span th:text="${course.courseID}"></td>
+                        <td span th:text="${course.startDate}"></td>
+                        <td span th:text="${course.endDate}"></td>
                         </tr>
                 </table>  
             </div>
-            <form action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" method="post">
-                <button type="submit" name="action" value="add">Add to Course Cart</button>
-                <form action="#" data-th-action="@{/wishlist/add}" data-th-object="${model}" method="post">   
-                <button type="submit" name="action" value="add">Add to Course</button>
-            </form>
+            <button type="submit" name="action" value="cart">Add to Course Cart</button>
+            <button type="submit" name="action" value="wishlist">Add to Course Wishlist</button>
         </form>
-        <button type="button" class="btn btn-link">View Course Cart</button>
+        <a href ="/coursecart" button type="button" class="btn btn-link">View Course Cart</button>
+        <a href ="/wishlist" button type="button" class="btn btn-link">View Course Wishlist</button>
     </div>
     
     </body>
