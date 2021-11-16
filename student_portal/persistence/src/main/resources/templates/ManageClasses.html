@@ -11,7 +11,15 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
     <body>
-        <div>
+        <nav class>
+            <a href="/" th:href="@{/}">Home</a>
+            <a href="/coursecart" th:href="@{/coursecart}">Course Cart</a>
+            <a href="/coursecatalog" th:href="@{/coursecatalog}">Class search and enroll</a>
+            <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
+        
+            <a href="#Instructor">Instructor</a>
+        </nav>
+        <!-- <div>
             <td colspan="2"> Enrolled Courses </td>
             <table id="CourseList" class="table">
                 <thead>
@@ -26,6 +34,6 @@
             
             <a href="/coursecart/coursecatalog" th:href="@/coursecatalog">Find Classes</a><br />
             <a href="/dropclass1" th:href="@{/dropclass1}" class="btn btn-large btn-success">Drop Classes</a>
-        </div>      
+        </div>       -->
     </body>
 </html>
