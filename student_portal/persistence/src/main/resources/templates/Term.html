@@ -11,21 +11,21 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
     <body>
-        <div>
-            <td colspan="2"> Enrolled Courses </td>
-            <table id="CourseList" class="table">
-                <thead>
-                    <tr>
-                        <th scope="col"> Course </th>
-                    </tr>
-                </thead>
-                <tr th:each="course : ${courses}">
-                    <td span th:text="${course.course}"></td>
-                    </tr>
-            </table>  
-            
-            <a href="/coursecart">Find Classes</a><br />
-            <a href="/dropclasses">Drop Classes</a>
-        </div>      
+        <div class="container">
+        <form method="post" th:object="${terms}" class="mt-5">
+            <div class="form-group">
+                <label>Select A Term</label>
+                <div th:each="term : ${terms}">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <label th:for="${term.term_name}" th:text="${term}"></label>
+                        
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Select</button>
+        </form>
+    
+    </div>
+    
     </body>
 </html>

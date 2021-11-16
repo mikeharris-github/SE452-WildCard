@@ -32,17 +32,10 @@ public class ManageClassesController {
   @GetMapping
   public String showCourses(Model model) {
     List<StudentCourseHistory> courses = repo.findByStatus("E");
-    courses.forEach(course -> System.out.println(course.toString()));
+ //   courses.forEach(course -> System.out.println(course.toString()));
     model.addAttribute("courses", courses);
     return "manageclasses";
   }
-
-  // @GetMapping("/findclasses")
-  // public String findclasses(Model model) {
-  //   Iterable<Term> courses = repo2.findAll();
-  //   model.addAttribute("courses", courses);
-  //     return "coursecart";
-  // }
 
   @GetMapping("/drop")
   public String dropclasses() {
