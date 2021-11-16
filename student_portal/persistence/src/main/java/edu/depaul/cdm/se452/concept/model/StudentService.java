@@ -23,4 +23,8 @@ public class StudentService implements IStudentService {
     return courseHistory.findByStudentId(studentId);
   }
 
+  public List<StudentCourseHistory> findByStatus(String status){
+    return courseHistory.findByStatus(status);
+  }
+
 }

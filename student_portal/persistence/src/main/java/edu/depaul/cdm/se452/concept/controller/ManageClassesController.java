@@ -24,24 +24,17 @@ import edu.depaul.cdm.se452.concept.model.TermService;
 public class ManageClassesController {
 
   private StudentCourseHistoryRepository repo;
-
+ 
   public ManageClassesController(StudentCourseHistoryRepository repo){
     this.repo = repo;
   }
 
-  // @Autowired
-  // private TermRepository termService;
-
   @GetMapping
   public String showCourses(Model model) {
-    Iterable<StudentCourseHistory> courses = repo.findAll();
+    List<StudentCourseHistory> courses = repo.findByStatus("E");
+ //   courses.forEach(course -> System.out.println(course.toString()));
     model.addAttribute("courses", courses);
     return "manageclasses";
-  }
-
-  @GetMapping("/findclasses")
-  public String findclasses() {
-      return "coursecart";
   }
 
   @GetMapping("/drop")
