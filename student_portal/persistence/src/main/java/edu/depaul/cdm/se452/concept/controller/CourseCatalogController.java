@@ -21,7 +21,7 @@ public class CourseCatalogController {
     public String showCourseCatalog(Model model) {
         Iterable<CourseCatalog> courses = courseCatRepo.findAll();
         courses.forEach(courseItem -> System.out.println(courseItem.toString()));
-        model.addAttribute("courseItem", courses);
+        model.addAttribute("courseItems", courses);
         return "courseCatalog";
       }
 

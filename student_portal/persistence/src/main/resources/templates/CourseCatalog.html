@@ -33,13 +33,12 @@
                             <th scope="col"> End date </th>
                         </tr>
                     </thead>
-                    <tr th:each="course : ${courses}">
-
-                        <td span><input type=radio th:name="${courses}" th:text="${course.courseName}"/></td>
-                        <td span th:text="${course.department}"></td>
-                        <td span th:text="${course.courseID}"></td>
-                        <td span th:text="${course.startDate}"></td>
-                        <td span th:text="${course.endDate}"></td>
+                    <tr th:each="courses : ${courseItems}"> 
+                        <td span><input type=radio th:name="${courses}" th:text="${courses.courseName}"/></td> 
+                        <td span th:text="${courses.department}"></td>
+                        <td span th:text="${courses.courseID}"></td>
+                        <td span th:text="${courses.startDate}"></td>
+                        <td span th:text="${courses.endDate}"></td>
                         </tr>
                 </table>  
             </div>
