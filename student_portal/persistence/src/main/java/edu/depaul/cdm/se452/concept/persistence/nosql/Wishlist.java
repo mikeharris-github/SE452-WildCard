@@ -16,10 +16,6 @@ import lombok.NoArgsConstructor;
 public class Wishlist {
     @Id
 	private String course;
-	private String status;
 	private Date startdate;
 	private Date enddate;
-	
-	//NEED FUNTION TO MODIFY THIS NUMBER
-	private int availableSeats = 25;
 }
