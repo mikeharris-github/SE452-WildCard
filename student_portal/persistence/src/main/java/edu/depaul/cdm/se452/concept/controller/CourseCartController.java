@@ -9,22 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.depaul.cdm.se452.concept.model.CourseCart;
 import edu.depaul.cdm.se452.concept.model.CourseCartRepository;
-import edu.depaul.cdm.se452.concept.model.Term;
+import edu.depaul.cdm.se452.concept.model.CourseCatalog;
+import edu.depaul.cdm.se452.concept.model.CourseCatalogRepository;
 
 
 @Controller
 @RequestMapping("/coursecart")
 public class CourseCartController {
-    private CourseCartRepository cartRepo;
+    private CourseCatalogRepository repo;
  
-    public CourseCartController(CourseCartRepository cartRepo ){
-      this.cartRepo = cartRepo ;
+    public CourseCartController(CourseCatalogRepository repo ){
+      this.repo = repo ;
     }
   
     @GetMapping
-    public String showCart(Model model) {
-      Iterable<CourseCart> cart = cartRepo.findAll();
-      cart.forEach(term_name -> System.out.println(term_name.toString()));
+    public String showAvailableCourses(Model model) {
+      Iterable<CourseCatalog> cart = repo.findAll();
+      cart.forEach(course -> System.out.println(course.toString()));
       model.addAttribute("cartItems", cart);
       return "coursecart";
     }

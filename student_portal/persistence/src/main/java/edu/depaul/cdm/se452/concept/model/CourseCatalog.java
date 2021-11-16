@@ -18,8 +18,8 @@ public class CourseCatalog {
 	private String courseName;
 	private String courseID;
 	private String department;
-	private Date startDate;
-	private Date endDate;
+	private String startDate;
+	private String endDate;
 	private int availableSeats;
 	private String term;
 }
