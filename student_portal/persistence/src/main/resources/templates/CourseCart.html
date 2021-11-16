@@ -26,7 +26,8 @@
                         </tr>
                     </thead>
                     <tr th:each="cart : ${cartItems}">
-                        <td span th:text="${cart.courseName}"></td>
+
+                        <td span><input type=radio th:name="${cart}" th:text="${cart.courseName}"/></td>
                         <td span th:text="${cart.department}"></td>
                         <td span th:text="${cart.courseID}"></td>
                         <td span th:text="${cart.startDate}"></td>
@@ -34,9 +35,13 @@
                         </tr>
                 </table>  
             </div>
-            <button class="btn btn-primary" type="submit">Add to course cart</button>
+            <form action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" method="post">
+                <button type="submit" name="action" value="add">Add to Course Cart</button>
+                <form action="#" data-th-action="@{/wishlist/add}" data-th-object="${model}" method="post">   
+                <button type="submit" name="action" value="add">Add to Course</button>
+            </form>
         </form>
-    
+        <button type="button" class="btn btn-link">View Course Cart</button>
     </div>
     
     </body>
