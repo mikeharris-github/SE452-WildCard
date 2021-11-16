@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class PersonalInformation {
     @Id
 	private String name;
-	private Date dob;
+	private String dob;
 	private String gender;
 	private String address;
 	private String city;
