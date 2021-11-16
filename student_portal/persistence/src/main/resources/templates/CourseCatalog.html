@@ -11,6 +11,14 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
     <body>
+        <nav class>
+            <a href="/" th:href="@{/}">Home</a>
+            <a href="/coursecart" th:href="@{/coursecart}">Course Cart</a>
+            <a href="/coursecatalog" th:href="@{/coursecatalog}">Class search and enroll</a>
+            <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
+        
+            <a href="#Instructor">Instructor</a>
+        </nav>
         <div class="container">
         <form method="post" action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" th:object="${courses}" class="mt-5">
             <div class="form-group">
@@ -38,8 +46,10 @@
             <button type="submit" name="action" value="cart">Add to Course Cart</button>
             <button type="submit" name="action" value="wishlist">Add to Course Wishlist</button>
         </form>
-        <a href ="/coursecart" th:href="@/coursecart}" button type="button" class="btn btn-link">View Course Cart</button>
-        <a href ="/wishlist" th:href="@/wishlist}" button type="button" class="btn btn-link">View Course Wishlist</button>
+        <a href ="/coursecart" th:href="@{/coursecart}" button type="button" class="btn btn-link">View Course Cart</button>
+            <a href="/dropclass2" th:href="@{/dropclass2}" cbutton type="button" class="btn btn-link">Drop Selected Classes</button>
+
+        <a href ="/wishlist" th:href="@{/wishlist}" button type="button" class="btn btn-link">View Course Wishlist</button> 
     </div>
     
     </body>
