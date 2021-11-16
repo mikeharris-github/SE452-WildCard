@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"> 
 <body>
   <nav class>
-      <a href="#home">Home</a>
-      <a href="#MyPersonalInfo">My personal information</a>
-      <a href="#CourseCart">Course cart</a>
-      <a href="#ClassSearchandEnroll">Class search and enroll</a>
-      <a href="#ViewMyClasses(Enrolled)">View my classes (Enrolled)</a>
+      <a href="/" th:href="@{/}">Home!</a>
+      <a href="/MyPersonalInfo" th:href="@{/mypersonalinfo}">My Personal Information</a>
+      <a href="/CourseCart" th:href="@{/coursecart}">Course Cart</a>
+      <a href="/ClassSearchandEnroll" th:href="@{/classsearchandenroll}">Class search and enroll</a>
+      <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
 </nav>
 
 <h2>Drop Classes</h2>
@@ -23,7 +23,9 @@
 
 </form>
 
-<p>  <input type="Submit" value="Drop Selected Classes"></p>
+<p>  
+  <a href="/dropclass2" th:href="@{/dropclass2}" class="btn btn-large btn-success">Drop Selected Classes</a>
+</p>
 
 </body>
 </html>
