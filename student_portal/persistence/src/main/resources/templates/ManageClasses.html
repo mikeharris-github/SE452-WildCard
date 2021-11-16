@@ -12,19 +12,20 @@
     </head>
     <body>
         <div>
+            <td colspan="2"> Enrolled Courses </td>
             <table id="CourseList" class="table">
                 <thead>
                     <tr>
                         <th scope="col"> Course </th>
-                        <th scope="col"> Status </th>
-
                     </tr>
                 </thead>
                 <tr th:each="course : ${courses}">
                     <td span th:text="${course.course}">test</td>
-                    <td th:text="${course.Status}">test1</td>
                     </tr>
-            </table>            
+            </table>  
+            
+            <a href="/findclasses">Find Classes</a><br />
+            <a href="/dropclasses">Drop Classes</a>
         </div>      
     </body>
 </html>

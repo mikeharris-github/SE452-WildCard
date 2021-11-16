@@ -13,6 +13,6 @@ import org.springframework.data.repository.query.Param;
  */
 public interface StudentCourseHistoryRepository extends CrudRepository<StudentCourseHistory, Integer>  {
 
-    public List<StudentCourseHistory> findByStudentId(int student_id);
-    
+    List<StudentCourseHistory> findByStudentId(int student_id);
+    List<StudentCourseHistory> findByStatus(String status);
 }
