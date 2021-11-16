@@ -4,25 +4,39 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
+import edu.depaul.cdm.se452.concept.model.IStudentService;
+import edu.depaul.cdm.se452.concept.model.ITermService;
+import edu.depaul.cdm.se452.concept.model.StudentCourseHistory;
 import edu.depaul.cdm.se452.concept.model.StudentCourseHistoryRepository;
+import edu.depaul.cdm.se452.concept.model.Term;
+import edu.depaul.cdm.se452.concept.model.TermRepository;
+import edu.depaul.cdm.se452.concept.model.TermService;
 
 @Controller
-@RequestMapping("manageclasses")
+@RequestMapping("/manageclasses")
 public class ManageClassesController {
 
-  @Autowired
-  private StudentCourseHistoryRepository courseService;
+  private StudentCourseHistoryRepository repo;
+
+  public ManageClassesController(StudentCourseHistoryRepository repo){
+    this.repo = repo;
+  }
+
+  // @Autowired
+  // private TermRepository termService;
 
   @GetMapping
-  public ModelAndView showCourses() {
-    ModelAndView mv = new ModelAndView("manageclasses");
-   // mv.addObject("courses", courseService.findAll());
-    mv.addObject("courses", courseService.findByStudentId(1234551));
-    return mv;
+  public String showCourses(Model model) {
+    Iterable<StudentCourseHistory> courses = repo.findAll();
+    model.addAttribute("courses", courses);
+    return "manageclasses";
   }
 
   @GetMapping("/findclasses")

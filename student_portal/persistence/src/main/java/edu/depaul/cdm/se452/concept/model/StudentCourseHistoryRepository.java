@@ -13,8 +13,6 @@ import org.springframework.data.repository.query.Param;
  */
 public interface StudentCourseHistoryRepository extends CrudRepository<StudentCourseHistory, Integer>  {
 
-    @Query(
-        value = "SELECT * from student_course_history where student_id = :student_id",
-        nativeQuery = true)
-    public List<StudentCourseHistory> findByStudentId(@Param("student_id") int student_id);
+    public List<StudentCourseHistory> findByStudentId(int student_id);
+    
 }
