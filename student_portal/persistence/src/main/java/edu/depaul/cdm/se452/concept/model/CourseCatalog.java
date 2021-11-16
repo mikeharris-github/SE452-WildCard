@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.concept.persistence.nosql;
+package edu.depaul.cdm.se452.concept.model;
 
 import java.sql.Date;
 
