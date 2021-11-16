@@ -11,6 +11,14 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
     <body>
+        <nav class>
+            <a href="/" th:href="@{/}">Home</a>
+            <a href="/coursecart" th:href="@{/coursecart}">Course Cart</a>
+            <a href="/coursecatalog" th:href="@{/coursecatalog}">Class search and enroll</a>
+            <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
+        
+            <a href="#Instructor">Instructor</a>
+        </nav>
         <div class="container">
         <form method="post" th:object="${cartItems}" class="mt-5">
             <div class="form-group">
@@ -25,21 +33,21 @@
                             <th scope="col"> End date </th>
                         </tr>
                     </thead>
-                    <tr th:each="cart : ${cartItems}">
+                    <!--<tr th:each="cart : ${cartItems}">
 
                         <td span><input type=radio th:name="${cart}" th:text="${cart.courseName}"/></td>
                         <td span th:text="${cart.department}"></td>
                         <td span th:text="${cart.courseID}"></td>
                         <td span th:text="${cart.startDate}"></td>
                         <td span th:text="${cart.endDate}"></td>
-                        </tr>
+                        </tr>-->
                 </table>  
             </div>
             <form action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" method="post">
                 <button type="submit" name="action" value="add">Add to Course Cart</button>
                 <form action="#" data-th-action="@{/wishlist/add}" data-th-object="${model}" method="post">   
                 <button type="submit" name="action" value="add">Add to Course</button>
-            </form>
+            </form> 
         </form>
         <button type="button" class="btn btn-link">View Course Cart</button>
     </div>
