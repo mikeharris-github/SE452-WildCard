@@ -12,12 +12,12 @@
     </head>
     <body>
         <nav class>
-            <a href="/" th:href="@{/}">Home</a>
-            <a href="/coursecart" th:href="@{/coursecart}">Course Cart</a>
-            <a href="/coursecatalog" th:href="@{/coursecatalog}">Class search and enroll</a>
-            <a href="/ViewMyClasses(Enrolled)" th:href="@{/viewmyclasses}">View my classes (Enrolled)</a>
-        
-            <a href="#Instructor">Instructor</a>
+            <a href="/" th:href="@{/}">Home | </a>
+            <a href="/coursecart" th:href="@{/coursecart}">Course Cart | </a>
+            <a href="/ViewMyClasses(Enrolled)" th:href="@{/manageclasses}">View Courses | </a>
+            <a href="/academicrecords" th:href="@{/academicrecords}">Academic Records | </a>
+            <a href="/personalinfo" th:href="@{/personalinfo}">Personal Information</a>
+
         </nav>
         <div class="container">
         <form method="post" action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" th:object="${courses}" class="mt-5">
