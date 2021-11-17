@@ -42,11 +42,11 @@
                         </tr>
                 </table>  
             </div>
-            <button type="submit" name="action" value="cart">Add to Course Cart</button>
-            <button type="submit" name="action" value="wishlist">Add to Course Wishlist</button>
+            
+            <a href ="/coursecart" th:href="@{/coursecart}" button type="button" class="btn btn-link">Add to Course Cart</button>
+                <a href ="/wishlist" th:href="@{/wishlist}" button type="button" class="btn btn-link">Add to Course Wishlist</button> 
         </form>
         <a href ="/coursecart" th:href="@{/coursecart}" button type="button" class="btn btn-link">View Course Cart</button>
-
         <a href ="/wishlist" th:href="@{/wishlist}" button type="button" class="btn btn-link">View Course Wishlist</button> 
     </div>
     
