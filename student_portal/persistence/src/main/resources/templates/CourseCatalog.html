@@ -20,23 +20,23 @@
 
         </nav>
         <div class="container">
-        <form method="post" action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" th:object="${courses}" class="mt-5">
+        <form method="post" action="#" th:action="@{/coursecart/add}" th:object="${coursecart}" >
             <div class="form-group">
                 <label>Select a course</label>
                 <table id="CourseList" class="table">
                     <thead>
                         <tr>
+                            <th scope="col"> Select</th>
                             <th scope="col"> Course Name</th>
-                            <th scope="col"> Course Dept </th>
                             <th scope="col"> Course ID </th>
                             <th scope="col"> Start date </th>
                             <th scope="col"> End date </th>
                         </tr>
                     </thead>
                     <tr th:each="courses : ${courseItems}"> 
-                        <td span><input type=radio th:name="${courses}" th:text="${courses.courseName}"/></td> 
-                        <td span th:text="${courses.department}"></td>
-                        <td span th:text="${courses.courseID}"></td>
+                        <td span><input type=radio th:value="${courses.courseName}" th:name="name"/></td> 
+                        <td span th:text="${courses.courseName}"></td>
+                        <td span th:text="${courses.department} + ${courses.courseID}"></td>
                         <td span th:text="${courses.startDate}"></td>
                         <td span th:text="${courses.endDate}"></td>
                         </tr>
@@ -46,7 +46,6 @@
             <button type="submit" name="action" value="wishlist">Add to Course Wishlist</button>
         </form>
         <a href ="/coursecart" th:href="@{/coursecart}" button type="button" class="btn btn-link">View Course Cart</button>
-            <a href="/dropclass2" th:href="@{/dropclass2}" cbutton type="button" class="btn btn-link">Drop Selected Classes</button>
 
         <a href ="/wishlist" th:href="@{/wishlist}" button type="button" class="btn btn-link">View Course Wishlist</button> 
     </div>

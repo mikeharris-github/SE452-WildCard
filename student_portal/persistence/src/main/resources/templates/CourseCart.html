@@ -20,36 +20,27 @@
         
         </nav>
         <div class="container">
-        <form method="post" th:object="${cartItems}" class="mt-5">
             <div class="form-group">
-                <label>Select a course</label>
+
                 <table id="CourseList" class="table">
                     <thead>
                         <tr>
                             <th scope="col"> Course Name</th>
-                            <th scope="col"> Course Dept </th>
-                            <th scope="col"> Course ID </th>
+                            <th scope="col"> Description </th>
                             <th scope="col"> Start date </th>
                             <th scope="col"> End date </th>
                         </tr>
                     </thead>
-                    <!-- <tr th:each="cart : ${cartItems}">
+                    <tr th:each="cart : ${cartItems}">
 
-                        <td span><input type=radio th:name="${cart}" th:text="${cart.courseName}"/></td>
-                        <td span th:text="${cart.department}"></td>
-                        <td span th:text="${cart.courseID}"></td>
-                        <td span th:text="${cart.startDate}"></td>
-                        <td span th:text="${cart.endDate}"></td>
-                        </tr> -->
+                        <td span th:text="${cart.course}"></td>
+                        <td span th:text="${cart.Description}"></td>
+                        <td span th:text="${cart.startdate}"></td>
+                        <td span th:text="${cart.enddate}"></td>
+                        </tr> 
                 </table>  
             </div>
-            <form action="#" data-th-action="@{/coursecart/add}" data-th-object="${model}" method="post">
-                <button type="submit" name="action" value="add">Add to Course Cart</button>
-                <form action="#" data-th-action="@{/wishlist/add}" data-th-object="${model}" method="post">   
-                <button type="submit" name="action" value="add">Add to Course</button>
-            </form> 
-        </form>
-        <button type="button" class="btn btn-link">View Course Cart</button>
+        <a href ="/coursecart" th:href="@{/coursecart/empty}" button type="button" class="btn btn-link">Empty Course Cart</button> 
     </div>
     
     </body>

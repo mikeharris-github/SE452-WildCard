@@ -17,8 +17,8 @@ public class CourseCart {
     @Id
 	private String course;
 	private String description;
-	private Date startdate;
-	private Date enddate;
+	private String startdate;
+	private String enddate;
 	
 	//NEED FUNTION TO MODIFY THIS NUMBER
 	private int availableSeats = 25;

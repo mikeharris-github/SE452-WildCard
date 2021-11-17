@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.depaul.cdm.se452.concept.model.Course;
@@ -40,38 +41,36 @@ public class CourseCartController {
       model.addAttribute("cartItems", cart);
       return "coursecart";
     }
-  
-    @GetMapping("/coursecatalog")
-    public String showAvailableCourses(Model model) {
-      Iterable<CourseCatalog> courses = repo.findAll();
-      courses.forEach(course -> System.out.println(course.toString()));
-      model.addAttribute("courses", courses);
-      return "coursecatalog";
-    }
-
-    @PostMapping
-    public String addToCart(@Valid CourseCart cart, BindingResult result, Model model){
-      if (result.hasErrors()) {
-        return "coursecart";
-      }
-  
-      cartRepo.save(cart);
-      model.addAttribute("students", repo.findAll());
-      return "redirect:/manageclasses";
-    }
-
 
     @RequestMapping(value="/add", method=RequestMethod.POST, params="action=cart") 
-      public ModelAndView save(@Valid CourseCart cart, BindingResult result, Model model) {
-          ModelAndView mv = new ModelAndView("coursecart");
-          cartRepo.save(cart);
-          Iterable<CourseCart> cartList = cartRepo.findAll();
-          mv.addObject("cart", cartList);
-          return mv;
+      public String save(@RequestParam("name") String desc, Model model) {
+        CourseCart add = new CourseCart();
+        String course = null;
+        String sd = null;
+        String ed = null;
+
+        List<CourseCatalog> courses = (List<CourseCatalog>) repo.findAll();
+
+        for(int i = 0; i<courses.size(); i++){
+          if(courses.get(i).getCourseName().equalsIgnoreCase(desc)){
+            course = courses.get(i).getDepartment() + courses.get(i).getCourseID();
+            sd = courses.get(i).getStartDate();
+            ed = courses.get(i).getEndDate();
+            add.setCourse(course);
+            add.setDescription(desc);
+            add.setStartdate(sd);
+            add.setEnddate(ed);
+            cartRepo.save(add);
+          }
+        }
+
+        return "redirect:/coursecart";
       }
 
-
-    // @RequestMapping(value="/edit", method=RequestMethod.POST, params="action=wishlist")
-    //   public ModelAndView cancel() {}
+    @GetMapping("/empty")
+    public String empty(Model model){
+      cartRepo.deleteAll();
+      return "redirect:/coursecart";
+    }
     
 }
